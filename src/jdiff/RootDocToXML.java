@@ -547,7 +547,8 @@ public class RootDocToXML {
                 outputFile.println("\"");
             }
             boolean isAbstract = md[i].isAbstract();
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HEJ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            // Ugly workaround for Java 8 deciding interface methods are abstract, where previous
+            // versions considered them non-abstract.
             if (cd.isInterface()) {
                 isAbstract = false;
             }
